@@ -1,0 +1,35 @@
+.game-board {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #4a90e2;
+  border-radius: 8px;
+  background-color: #0f0f0f;
+  padding: 5px;
+  box-shadow: 0 0 20px rgba(74, 144, 226, 0.3);
+}
+
+.board-row {
+  display: flex;
+}
+
+.board-cell {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #333;
+  transition: all 0.1s ease;
+}
+
+.board-cell.filled {
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.board-cell.empty {
+  background-color: #1a1a1a !important;
+}
+
+/* Add glow effect for filled cells */
+.board-cell.filled:not(.empty) {
+  box-shadow: 
+    inset 0 0 5px rgba(255, 255, 255, 0.2),
+    0 0 3px rgba(255, 255, 255, 0.1);
+}
