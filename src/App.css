@@ -1,169 +1,174 @@
+/* 华容道游戏样式 */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 
+              'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
 .app {
-  text-align: center;
-  padding: 20px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding: 20px;
 }
 
-.app h1 {
-  color: #fff;
-  font-size: 3rem;
+.app-header {
+  text-align: center;
   margin-bottom: 30px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1, #96CEB4);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradient 3s ease infinite;
+  color: white;
 }
 
-@keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.app-header h1 {
+  font-size: 3rem;
+  margin: 0 0 10px 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  font-weight: 700;
 }
 
-.menu {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+.app-header p {
+  font-size: 1.2rem;
+  margin: 0;
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.app-main {
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
-  padding: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  max-width: 500px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+  max-width: 600px;
+  width: 100%;
 }
 
-.menu h2 {
-  color: #fff;
-  font-size: 2rem;
-  margin-bottom: 20px;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+.game-instructions {
+  margin-top: 30px;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid #4ecdc4;
 }
 
-.menu h3 {
-  color: #4CAF50;
-  font-size: 1.5rem;
-  margin: 20px 0;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+.game-instructions h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 1.3rem;
 }
 
-.menu p {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.1rem;
-  margin: 10px 0;
-  line-height: 1.4;
+.game-instructions ul {
+  margin: 0;
+  padding-left: 20px;
 }
 
-.game-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+.game-instructions li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  color: #555;
 }
 
-.game-canvas {
-  border: 3px solid #fff;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  background: #000;
-}
-
-.controls {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.controls button {
-  font-size: 14px;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.app-footer {
+  margin-top: auto;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  padding-top: 20px;
 }
 
 /* 响应式设计 */
-@media (max-width: 900px) {
-  .app h1 {
-    font-size: 2rem;
+@media (max-width: 768px) {
+  .app {
+    padding: 10px;
   }
   
-  .game-canvas {
-    width: 90vw;
-    height: calc(90vw * 0.5);
-    max-width: 800px;
-    max-height: 400px;
+  .app-header h1 {
+    font-size: 2.5rem;
   }
   
-  .menu {
-    margin: 0 20px;
-    padding: 30px 20px;
-  }
-}
-
-@media (max-width: 600px) {
-  .app h1 {
-    font-size: 1.5rem;
-  }
-  
-  .menu h2 {
-    font-size: 1.5rem;
-  }
-  
-  .menu p {
+  .app-header p {
     font-size: 1rem;
   }
   
-  .controls {
-    flex-direction: column;
-    align-items: center;
+  .app-main {
+    padding: 20px;
+    margin: 0 10px;
   }
   
-  .controls button {
-    width: 200px;
+  .game-instructions {
+    margin-top: 20px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header h1 {
+    font-size: 2rem;
+  }
+  
+  .app-main {
+    padding: 15px;
+  }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app-main {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* 选中状态的动画 */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 15px rgba(255,255,255,0.8);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255,255,255,1);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(255,255,255,0.8);
+  }
+}
+
+/* 获胜动画 */
+@keyframes celebration {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(1.05);
   }
 }
 
 /* 按钮悬停效果 */
+button {
+  transition: all 0.2s ease !important;
+}
+
 button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
-}
-
-button:active {
-  transform: translateY(-1px);
-}
-
-/* 游戏状态指示器 */
-.game-status {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-/* 加载动画 */
-.loading {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border: 3px solid rgba(255,255,255,.3);
-  border-radius: 50%;
-  border-top-color: #fff;
-  animation: spin 1s ease-in-out infinite;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
 }
