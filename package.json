@@ -1,7 +1,7 @@
 {
-  "name": "react-pong-game",
+  "name": "huarongpath",
   "version": "1.0.0",
-  "description": "A classic Pong ball game built with React",
+  "description": "华容道在线小游戏 - 使用React和TypeScript构建",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --mode development --open",
@@ -16,15 +16,19 @@
     "@babel/core": "^7.22.0",
     "@babel/preset-env": "^7.22.0",
     "@babel/preset-react": "^7.22.0",
+    "@babel/preset-typescript": "^7.22.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
     "babel-loader": "^9.1.0",
     "css-loader": "^6.8.0",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.0",
+    "typescript": "^5.1.0",
     "webpack": "^5.88.0",
     "webpack-cli": "^5.1.0",
     "webpack-dev-server": "^4.15.0"
   },
-  "keywords": ["react", "game", "pong", "javascript"],
-  "author": "React Pong Game",
+  "keywords": ["react", "game", "huarongdao", "typescript", "puzzle"],
+  "author": "HuarongPath Game",
   "license": "MIT"
 }
